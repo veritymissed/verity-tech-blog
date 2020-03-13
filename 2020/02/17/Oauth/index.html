@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<!-- Head tag -->
+<head>
+
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+    <!--Description-->
+
+    
+
+    
+        <meta name="description" content="開放授權
+授權給第三方存取自己網站上的私密資料(Protected resources) 可能設定
+特定時段
+
+Protected resources
+
+相片
+
+影片
+
+聯絡人列表
+
+提供權杖
+
+源自Twitter的OpenID
+
+Oauth 2.0
+
+
+數位身份（Digital Identity）"/>
+    
+
+    <!--Author-->
+    
+        <meta name="author" content="Verity Tsai"/>
+    
+
+    <!--Open Graph Title-->
+    
+        <meta property="og:title" content="Oauth"/>
+    
+
+    <!--Open Graph Description-->
+    
+        <meta property="og:description" content="開放授權
+授權給第三方存取自己網站上的私密資料(Protected resources) 可能設定
+特定時段
+
+Protected resources
+
+相片
+
+影片
+
+聯絡人列表
+
+提供權杖
+
+源自Twitter的OpenID
+
+Oauth 2.0
+
+
+數位身份（Digital Identity）"/>
+    
+
+    <!--Open Graph Site Name-->
+        <meta property="og:site_name" content="Hexo"/>
+
+    <!--Type page-->
+    
+        <meta property="og:type" content="article"/>
+    
+
+    <!--Page Cover-->
+    
+    
+        <meta property="og:image" content="http://yoursite.com/img/redlight.jpeg"/>
+    
+
+        <meta name="twitter:card" content="summary_large_image"/>
+
+    
+
+    
+        <meta name="twitter:image" content="http://yoursite.com/img/redlight.jpeg"/>
+    
+
+    <!-- Title -->
+    
+    <title>Oauth - Hexo</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet"/>
+
+    <!-- Custom CSS -->
+    
+<link rel="stylesheet" href="/css/style.css">
+
+
+    <!-- Custom Fonts -->
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" type="text/css"/>
+    <link href="//fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css"/>
+    <link href="//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css"/>
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="//oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="//oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Gallery -->
+    <link href="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.css" type="text/css" rel="stylesheet"/>
+
+    <!-- Google Analytics -->
+    
+
+
+    <!-- favicon -->
+    
+
+<meta name="generator" content="Hexo 4.2.0"></head>
+
+
+<body>
+
+    <!-- Menu -->
+    <!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">開發筆記</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                
+                    <li>
+                        <a href="/">
+                            
+                                Home
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/archives">
+                            
+                                Archives
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/tags">
+                            
+                                Tags
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/categories">
+                            
+                                Categories
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="https://github.com/klugjo/hexo-theme-clean-blog" target="_blank" rel="noopener">
+                            
+                                <i class="fa fa-github fa-stack-2x"></i>
+                            
+                        </a>
+                    </li>
+                
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+
+    <!-- Main Content -->
+    <!-- Page Header -->
+<!-- Set your background image for this header in your post front-matter: cover -->
+
+<header class="intro-header" style="background-image: url('/img/redlight.jpeg')">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+                    <h1>Oauth</h1>
+                    
+                    <span class="meta">
+                        <!-- Date and Author -->
+                        
+                        
+                            2020-02-17
+                        
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+
+            <!-- Tags and categories -->
+           
+
+            <!-- Gallery -->
+            
+
+            <!-- Post Main Content -->
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul>
+<li>開放授權</li>
+<li>授權給第三方存取自己網站上的私密資料(Protected resources) 可能設定</li>
+<li>特定時段</li>
+</ul>
+<p>Protected resources</p>
+<ul>
+<li><p>相片</p>
+</li>
+<li><p>影片</p>
+</li>
+<li><p>聯絡人列表</p>
+</li>
+<li><p>提供權杖</p>
+</li>
+<li><p>源自Twitter的OpenID</p>
+</li>
+<li><p>Oauth 2.0</p>
+</li>
+</ul>
+<h2 id="數位身份（Digital-Identity）"><a href="#數位身份（Digital-Identity）" class="headerlink" title="數位身份（Digital Identity）"></a>數位身份（Digital Identity）</h2><ul>
+<li>Public/Private keys 公鑰/私鑰</li>
+<li>Private key只有本人知道</li>
+<li>有一個身份認證的機構，</li>
+<li>SSH</li>
+</ul>
+<p><a href="https://zh.wikipedia.org/wiki/数字身份" target="_blank" rel="noopener">數位身份</a></p>
+<h2 id="OpenID"><a href="#OpenID" class="headerlink" title="OpenID"></a>OpenID</h2><ul>
+<li><p>去中心化</p>
+</li>
+<li><p>身份驗證</p>
+</li>
+<li><p>身份提供者（IdP）</p>
+</li>
+<li><p>終端使用者（End User）</p>
+</li>
+<li><p>標示（Identifier）</p>
+</li>
+<li><p>依賴方（Relying Party, RP）</p>
+</li>
+<li><p>快樂武漢</p>
+</li>
+</ul>
+<h2 id="Bearer-token"><a href="#Bearer-token" class="headerlink" title="Bearer token"></a>Bearer token</h2><h2 id="Oauth的四種授權流程（Oauth-Grant-flows）"><a href="#Oauth的四種授權流程（Oauth-Grant-flows）" class="headerlink" title="Oauth的四種授權流程（Oauth Grant flows）"></a>Oauth的四種授權流程（Oauth Grant flows）</h2><ul>
+<li>Authorization Code Grant</li>
+<li>Implicit Grant</li>
+<li>Resource Owner Password Credentials Grant</li>
+<li>Client Credentials Grant</li>
+</ul>
+<h3 id="1-Authorization-Code-Grant-Type-Flow"><a href="#1-Authorization-Code-Grant-Type-Flow" class="headerlink" title="1. Authorization Code Grant Type Flow"></a>1. Authorization Code Grant Type Flow</h3><ul>
+<li>Authorization code &lt;-&gt; Access token</li>
+<li>應用程式從Oauth server(authorization server)得到一段 authorization code</li>
+<li>Redirect URL</li>
+</ul>
+<h4 id="相關參數"><a href="#相關參數" class="headerlink" title="相關參數"></a>相關參數</h4><h5 id="client"><a href="#client" class="headerlink" title="client"></a>client</h5><ul>
+<li>client_id</li>
+<li>client_secret</li>
+<li>Registered Redirect URIs</li>
+<li>Supported Grant Types</li>
+<li>上述參數油Oauth server提供</li>
+<li><code>state</code> =&gt; 不是由Oauth提供</li>
+</ul>
+<h5 id="user"><a href="#user" class="headerlink" title="user"></a>user</h5><ul>
+<li>login</li>
+<li>password</li>
+</ul>
+<p>Ex.</p>
+<table>
+<thead>
+<tr>
+<th>Client Registration</th>
+<th></th>
+<th>User Account</th>
+<th></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>client_id</td>
+<td>0oappxseeykp1peAl0h7</td>
+<td>login</td>
+<td><a href="mailto:determined-mandrill@example.com">determined-mandrill@example.com</a></td>
+</tr>
+<tr>
+<td>client_secret</td>
+<td>NpUnJg78q1qXq88jjYC84PMxpuGlHUoKTSkQTd2q</td>
+<td>password</td>
+<td>Unsightly-Toucan-Average-Butterfly-8</td>
+</tr>
+<tr>
+<td>Registered Redirect URIs</td>
+<td><a href="https://www.oauth.com/playground/authorization-code.html" target="_blank" rel="noopener">https://www.oauth.com/playground/authorization-code.html</a><br><a href="https://www.oauth.com/playground/authorization-code-with-pkce.html" target="_blank" rel="noopener">https://www.oauth.com/playground/authorization-code-with-pkce.html</a></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Supported Grant Types</td>
+<td>authorization_code <br> refresh_token <br> implicit</td>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+<h4 id="流程"><a href="#流程" class="headerlink" title="流程"></a>流程</h4><p>儲存 <code>state</code> 參數在Cookie或Session中，表示目前狀態</p>
+<ol>
+<li>Register a Client - 如果要使用Oauth API，要先在Oauth提供者上，為自己的應用程式註冊一個客戶帳戶或是開發者帳戶。比方說開發中的App要使用Facebook的Oauth，就必須註冊開發者帳戶，並回答打算使用Oauth的App的相關資訊。</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">https:&#x2F;&#x2F;dev-396343.oktapreview.com&#x2F;oauth2&#x2F;default&#x2F;v1&#x2F;authorize?</span><br><span class="line">  response_type&#x3D;code</span><br><span class="line">  &amp;client_id&#x3D;0oappxseeykp1peAl0h7</span><br><span class="line">  &amp;redirect_uri&#x3D;https:&#x2F;&#x2F;www.oauth.com&#x2F;playground&#x2F;authorization-code.html</span><br><span class="line">  &amp;scope&#x3D;photo+offline_access</span><br><span class="line">  &amp;state&#x3D;BszOMcMVkHwPMXzk</span><br></pre></td></tr></table></figure>
+
+<ol start="2">
+<li>Redirect URL</li>
+</ol>
+<p>進入redirect URL 後，根據這頁裡面提供的code更改標頭的 <code>state</code>，表示這次流程的</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">?state&#x3D;BszOMcMVkHwPMXzk&amp;code&#x3D;qFfxoJoLIFGQ8AtvBKED</span><br></pre></td></tr></table></figure>
+
+<p>攻擊者如何攻擊？<br>攻擊者可以偽造成client，向Oauth server送出GET請求，並得到code，所以才需要<code>state</code><br>這個機制。儲存在client端並由client自身送出，的<code>state</code>參數。Client端驗證Oauth server回傳回來的<code>state</code>值，相同才能確認這個response是屬於這次流程。</p>
+<ol start="3">
+<li>Exchange the Authorization Code 交換授權碼</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">POST https:&#x2F;&#x2F;dev-396343.oktapreview.com&#x2F;oauth2&#x2F;default&#x2F;v1&#x2F;token</span><br><span class="line"></span><br><span class="line">grant_type&#x3D;authorization_code</span><br><span class="line">&amp;client_id&#x3D;0oappxseeykp1peAl0h7</span><br><span class="line">&amp;client_secret&#x3D;NpUnJg78q1qXq88jjYC84PMxpuGlHUoKTSkQTd2q</span><br><span class="line">&amp;redirect_uri&#x3D;https:&#x2F;&#x2F;www.oauth.com&#x2F;playground&#x2F;authorization-code.html</span><br><span class="line">&amp;code&#x3D;wCurajyb_OYlqzsYGVba</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  &quot;token_type&quot;: &quot;Bearer&quot;,</span><br><span class="line">  &quot;expires_in&quot;: 3600,</span><br><span class="line">  &quot;access_token&quot;: &quot;eyJraWQiOiIxZ3hlY0JSWGhrSUV6U3J1LTVVZjQ2WHhuVE5HVWFOeVVqeDlXUjF4MXFFIiwiYWxnIjoiUlMyNTYifQ.eyJ2ZXIiOjEsImp0aSI6IkFULkFSSm9Eb0hJbmkwYktkUlpSSGx4TFJ5LUp2LUlNb2hJUnY1RWpXblhnVTAuVkE2ajdtYitWaG9oNUY1bEUyd2c4MGtvUlg0UVphdFo2Q3BwU2NwWUZBZz0iLCJpc3MiOiJodHRwczovL2Rldi0zOTYzNDMub2t0YXByZXZpZXcuY29tL29hdXRoMi9kZWZhdWx0IiwiYXVkIjoiYXBpOi8vZGVmYXVsdCIsImlhdCI6MTU4MTU4NjQyNSwiZXhwIjoxNTgxNTkwMDI1LCJjaWQiOiIwb2FwcHhzZWV5a3AxcGVBbDBoNyIsInVpZCI6IjAwdXBxMTdmZWtUSUxPWGtzMGg3Iiwic2NwIjpbIm9mZmxpbmVfYWNjZXNzIiwicGhvdG8iXSwic3ViIjoiZGV0ZXJtaW5lZC1tYW5kcmlsbEBleGFtcGxlLmNvbSJ9.fHRiGRAdf5UFf3UpIq7BoVUBHMZwhJjHcFbHI87xya2yi3t_G6C32gnpCafp-qGVJDNIx8yfWqmatey8HvojDAlqm5bdUWBF8j7J2fUwh7dFF885BI3I_GcV6XZ_VUxtes5pHlDg_Fxrb-QqkL9iWDC4DiYJEgXYkF_Zg0uH_ZcLJMV589NGHgatOiD1uz87xdYmGcWADZNFxhT_UNFRMje2RzWsZwlysXizWLQL6Pdm3Q60EO6xl0a8KbPXmpZ-4ykPFMpTrrwIw8epw9vaWbq7ZYYqsyf9qHR7q3INMO2LPBlsVLiT2p3SrfLO220TzXWBqJn-I6M8LVod0IeS-g&quot;,</span><br><span class="line">  &quot;scope&quot;: &quot;offline_access photo&quot;,</span><br><span class="line">  &quot;refresh_token&quot;: &quot;Wr4c66TVXmEjDBIrxy2mi-z1MFVeay3M2_Gao0QGFBc&quot;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="2-Implicit-Grant-Type-Flow"><a href="#2-Implicit-Grant-Type-Flow" class="headerlink" title="2. Implicit Grant Type Flow"></a>2. Implicit Grant Type Flow</h3><h3 id="3-Resource-Owner-Password-Credentials-Grant-Type-Flow"><a href="#3-Resource-Owner-Password-Credentials-Grant-Type-Flow" class="headerlink" title="3. Resource Owner Password Credentials Grant Type Flow"></a>3. Resource Owner Password Credentials Grant Type Flow</h3><h3 id="4-Client-Credentials-Grant-Type-Flow"><a href="#4-Client-Credentials-Grant-Type-Flow" class="headerlink" title="4. Client Credentials Grant Type Flow"></a>4. Client Credentials Grant Type Flow</h3>
+
+                
+            </div>
+
+            <!-- Comments -->
+            
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    
+
+
+                </div>
+            
+        </div>
+    </div>
+</article>
+
+    <!-- Footer -->
+    <hr />
+
+<!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                    
+
+                    
+                        <li>
+                            <a href="https://facebool.com/veritymissed" target="_blank">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li>
+                    
+
+                    
+                        <li>
+                            <a href="https://github.com/veritymissed" target="_blank">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li>
+                    
+
+                    
+
+                    
+
+                    
+                </ul>
+                <p class="copyright text-muted">&copy; 2020 Verity Tsai<br></p>
+                <p class="copyright text-muted">Original Theme <a target="_blank" href="http://startbootstrap.com/template-overviews/clean-blog/">Clean Blog</a> from <a href="http://startbootstrap.com/" target="_blank">Start Bootstrap</a></p>
+                <p class="copyright text-muted">Adapted for <a target="_blank" href="https://hexo.io/">Hexo</a> by <a href="http://www.codeblocq.com/" target="_blank">Jonathan Klughertz</a></p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+    <!-- After footer scripts -->
+    
+<!-- jQuery -->
+<script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
+
+<!-- Bootstrap -->
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+<!-- Gallery -->
+<script src="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.js" type="text/javascript" charset="utf-8"></script>
+
+<!-- Disqus Comments -->
+
+
+
+</body>
+
+</html>
