@@ -13,6 +13,17 @@
     
 
     
+        <meta name="description" content="前言最近要來整理Oauth的筆記，直接先從Oauth2.0開始。
+根據Oauth2.0的官方文件，先列出2.0的重點：
+
+名詞解釋
+Oauth2.0 協定的流程
+Oauth2.0 授權的授與方式（四種方式）
+存取的token
+刷新的token
+
+名詞定義解釋我們些列出Oauth2.0裡面常見的角色與"/>
+    
 
     <!--Author-->
     
@@ -21,10 +32,21 @@
 
     <!--Open Graph Title-->
     
-        <meta property="og:title" content="Hexo"/>
+        <meta property="og:title" content="Oauth 2.0 筆記，四種常見流程"/>
     
 
     <!--Open Graph Description-->
+    
+        <meta property="og:description" content="前言最近要來整理Oauth的筆記，直接先從Oauth2.0開始。
+根據Oauth2.0的官方文件，先列出2.0的重點：
+
+名詞解釋
+Oauth2.0 協定的流程
+Oauth2.0 授權的授與方式（四種方式）
+存取的token
+刷新的token
+
+名詞定義解釋我們些列出Oauth2.0裡面常見的角色與"/>
     
 
     <!--Open Graph Site Name-->
@@ -32,7 +54,7 @@
 
     <!--Type page-->
     
-        <meta property="og:type" content="website"/>
+        <meta property="og:type" content="article"/>
     
 
     <!--Page Cover-->
@@ -51,7 +73,7 @@
 
     <!-- Title -->
     
-    <title>Auth - Hexo</title>
+    <title>Oauth 2.0 筆記，四種常見流程 - Hexo</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet"/>
@@ -168,62 +190,123 @@
 
 
     <!-- Main Content -->
-    
+    <!-- Page Header -->
+<!-- Set your background image for this header in your post front-matter: cover -->
 
-<!-- Page Header -->
-<!-- Set your background image for this header in the theme's configuration: index_cover -->
 <header class="intro-header" style="background-image: url('https://user-images.githubusercontent.com/6461602/76592396-33316e80-652e-11ea-8a83-fb3209225088.jpeg')">
     <div class="container">
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                <div class="site-heading">
-                    <h1>#Auth</h1>
+                <div class="post-heading">
+                    <h1>Oauth 2.0 筆記，四種常見流程</h1>
+                    
+                    <span class="meta">
+                        <!-- Date and Author -->
+                        
+                        
+                            2020-02-17
+                        
+                    </span>
                 </div>
             </div>
         </div>
     </div>
 </header>
 
-<!-- Main Content -->
-<div class="container">
-    <div class="row">
-        <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+
+            <!-- Tags and categories -->
+           
+                <div class="col-lg-4 col-lg-offset-2 col-md-5 col-md-offset-1 post-tags">
+                    
+                        
+
+
+<a href="/tags/Auth/">#Auth</a> <a href="/tags/Oauth/">#Oauth</a> <a href="/tags/Web/">#Web</a> <a href="/tags/Login/">#Login</a> <a href="/tags/SignIn/">#SignIn</a>
+
+
+                    
+                </div>
+                <div class="col-lg-4 col-md-5 post-categories">
+                    
+                </div>
             
-                <div class="post-preview">
-    <a href="/2020/02/17/Oauth/">
-        <h1 class="post-title archive">
-            Oauth 筆記，四種常見流程
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2020-02-17
-    </p>
-</div>
+
+            <!-- Gallery -->
             
-                <div class="post-preview">
-    <a href="/2020/02/17/Oauth2/">
-        <h1 class="post-title archive">
-            Oauth 2.0 筆記，四種常見流程
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2020-02-17
-    </p>
-</div>
-            
-            <div class="archive-before-pagination"></div>
-            <ul class="pager">
-    
-    
+
+            <!-- Post Main Content -->
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>最近要來整理Oauth的筆記，直接先從Oauth2.0開始。</p>
+<p>根據<a href="tools.ietf.org/html/rfc6749">Oauth2.0的官方文件</a>，先列出2.0的重點：</p>
+<ul>
+<li>名詞解釋</li>
+<li>Oauth2.0 協定的流程</li>
+<li>Oauth2.0 授權的授與方式（四種方式）</li>
+<li>存取的token</li>
+<li>刷新的token</li>
 </ul>
+<h2 id="名詞定義解釋"><a href="#名詞定義解釋" class="headerlink" title="名詞定義解釋"></a>名詞定義解釋</h2><p>我們些列出Oauth2.0裡面常見的角色與名詞，他們在官方文件裡有特定的名稱與定義。</p>
+<ul>
+<li>受保護的資源（Protected resources）：與個人隱私等相關的資料。例如Email、姓名、性別、生日、居住地、喜好等</li>
+</ul>
+<p>四個角色：</p>
+<ol>
+<li><p><strong>資源擁有者（Resource owner）</strong>：上述受保護資源的擁有者，就是使用者。例如我在Facebook註冊的姓名、性別與點讚的頁面等，這些就是受保護的資源，我就是資源擁有者。</p>
+</li>
+<li><p><strong>資源伺服器（Resource server）</strong>：存放這些受保護資源的伺服器。例如Facebook/Google內部專門存放使用者相關個人資料與喜好的伺服器。</p>
+</li>
+<li><p><strong>客戶/用戶（Client）</strong>：這邊容易與使用者 - 資源擁有者搞混；這裡的客戶指的是想使用驗證服務，並存取受保護資源的應用程式。例如Momo / Pchome等購物網、希望能讓消費者直接透過Facebook/Google的帳號登入，不用額外在購物網站上完成繁雜的註冊流程。這邊使用驗證身份服務的網站就是客戶（Client），各種需要身份驗證服務的Mobile App也都是客戶。</p>
+</li>
+<li><p><strong>授權伺服器（Authorization server）</strong>：這個伺服器執行驗證並授權的流程：驗證資源擁有者的身份成功後，提供客戶存取受保護資源的token。</p>
+</li>
+</ol>
+<p>除此之外還有：</p>
+<ul>
+<li><p>存取token（Access token）：用來存取受保護資源的憑證。</p>
+</li>
+<li><p>刷新token（Refresh token）：舊的存取token無效或過期後，用來獲得新的存取token。</p>
+</li>
+</ul>
+<h2 id="Oauth2-0-協定的流程"><a href="#Oauth2-0-協定的流程" class="headerlink" title="Oauth2.0 協定的流程"></a>Oauth2.0 協定的流程</h2><p>Oauth 2.0授權的授予方式可以細分位置四種</p>
+<ol>
+<li>授權碼（Authorization code）</li>
+<li>隱性（Implicit）</li>
+<li>資源擁有者的密碼憑證（Resource owner password credentials）</li>
+<li>客戶憑證（Client credentials）</li>
+</ol>
+<p>這四種的選擇可以根據下列三點來判斷</p>
+<ol>
+<li>存取token（Access token）由誰持有</li>
+<li>客戶的型態為何？</li>
+<li>客戶與資源伺服器是第一方還第三方關係</li>
+</ol>
+<h2 id="Refs"><a href="#Refs" class="headerlink" title="Refs"></a>Refs</h2><p><a href="tools.ietf.org/html/rfc6749">Oauth2.0的官方文件</a><br><a href="https://alexbilbie.com/guide-to-oauth-2-grants/" target="_blank" rel="noopener">A Guide To OAuth 2.0 Grants - Alex Bilbie</a></p>
+
+
+                
+            </div>
+
+            <!-- Comments -->
+            
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    
+    <hr />
+    <h3>留言:</h3>
+    <div id="disqus_thread">
+        <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript" target="_blank" rel="noopener">comments powered by Disqus.</a></noscript>
+    </div>
+
+
+
+                </div>
+            
         </div>
     </div>
-</div>
-
+</article>
 
     <!-- Footer -->
     <hr />
@@ -293,7 +376,7 @@
         var dsq = document.createElement('script');
         dsq.type = 'text/javascript';
         dsq.async = true;
-        dsq.src = '//' + disqus_shortname + '.disqus.com/count.js';
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
         (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
     }());
 </script>
