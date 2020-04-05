@@ -16,13 +16,13 @@
         <meta name="description" content="前言最近要來整理Oauth的筆記，直接先從Oauth2.0開始。
 根據Oauth2.0的官方文件，先列出2.0的重點：
 
-名詞解釋
 Oauth2.0 協定的流程
-Oauth2.0 授權的授與方式（四種方式）
-存取的token
-刷新的token
+名詞解釋
+Oauth2.0 授權的四種授與方式
+刷新的token（可選擇是否使用）
 
-名詞定義解釋我們些列出Oauth2.0裡面常見的角色與"/>
+Oauth2.0 協定的流程
+名詞定義解釋我們些列出Oauth"/>
     
 
     <!--Author-->
@@ -32,7 +32,7 @@ Oauth2.0 授權的授與方式（四種方式）
 
     <!--Open Graph Title-->
     
-        <meta property="og:title" content="Oauth 2.0 筆記，四種常見流程"/>
+        <meta property="og:title" content="Oauth 2.0 筆記（一），流程與名詞解釋"/>
     
 
     <!--Open Graph Description-->
@@ -40,13 +40,13 @@ Oauth2.0 授權的授與方式（四種方式）
         <meta property="og:description" content="前言最近要來整理Oauth的筆記，直接先從Oauth2.0開始。
 根據Oauth2.0的官方文件，先列出2.0的重點：
 
-名詞解釋
 Oauth2.0 協定的流程
-Oauth2.0 授權的授與方式（四種方式）
-存取的token
-刷新的token
+名詞解釋
+Oauth2.0 授權的四種授與方式
+刷新的token（可選擇是否使用）
 
-名詞定義解釋我們些列出Oauth2.0裡面常見的角色與"/>
+Oauth2.0 協定的流程
+名詞定義解釋我們些列出Oauth"/>
     
 
     <!--Open Graph Site Name-->
@@ -73,7 +73,7 @@ Oauth2.0 授權的授與方式（四種方式）
 
     <!-- Title -->
     
-    <title>Oauth 2.0 筆記，四種常見流程 - Hexo</title>
+    <title>Oauth 2.0 筆記（一），流程與名詞解釋 - Hexo</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet"/>
@@ -198,7 +198,7 @@ Oauth2.0 授權的授與方式（四種方式）
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
                 <div class="post-heading">
-                    <h1>Oauth 2.0 筆記，四種常見流程</h1>
+                    <h1>Oauth 2.0 筆記（一），流程與名詞解釋</h1>
                     
                     <span class="meta">
                         <!-- Date and Author -->
@@ -243,15 +243,15 @@ Oauth2.0 授權的授與方式（四種方式）
                 <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>最近要來整理Oauth的筆記，直接先從Oauth2.0開始。</p>
 <p>根據<a href="tools.ietf.org/html/rfc6749">Oauth2.0的官方文件</a>，先列出2.0的重點：</p>
 <ul>
-<li>名詞解釋</li>
 <li>Oauth2.0 協定的流程</li>
-<li>Oauth2.0 授權的授與方式（四種方式）</li>
-<li>存取的token</li>
-<li>刷新的token</li>
+<li>名詞解釋</li>
+<li>Oauth2.0 授權的四種授與方式</li>
+<li>刷新的token（可選擇是否使用）</li>
 </ul>
+<h2 id="Oauth2-0-協定的流程"><a href="#Oauth2-0-協定的流程" class="headerlink" title="Oauth2.0 協定的流程"></a>Oauth2.0 協定的流程</h2><p><img src="./Oauth_flow.jpeg" alt="Oauth2.0 flow"></p>
 <h2 id="名詞定義解釋"><a href="#名詞定義解釋" class="headerlink" title="名詞定義解釋"></a>名詞定義解釋</h2><p>我們些列出Oauth2.0裡面常見的角色與名詞，他們在官方文件裡有特定的名稱與定義。</p>
 <ul>
-<li>受保護的資源（Protected resources）：與個人隱私等相關的資料。例如Email、姓名、性別、生日、居住地、喜好等</li>
+<li><strong>受保護的資源（Protected resources）</strong>：與個人隱私等相關的資料。例如Email、姓名、性別、生日、居住地、喜好等</li>
 </ul>
 <p>四個角色：</p>
 <ol>
@@ -266,24 +266,47 @@ Oauth2.0 授權的授與方式（四種方式）
 </ol>
 <p>除此之外還有：</p>
 <ul>
-<li><p>存取token（Access token）：用來存取受保護資源的憑證。</p>
+<li><p><strong>存取token（Access token）</strong>：用來存取受保護資源的憑證。</p>
 </li>
-<li><p>刷新token（Refresh token）：舊的存取token無效或過期後，用來獲得新的存取token。</p>
+<li><p><strong>刷新token（Refresh token）</strong>：舊的存取token無效或過期後，用來獲得新的存取token。</p>
 </li>
 </ul>
-<h2 id="Oauth2-0-協定的流程"><a href="#Oauth2-0-協定的流程" class="headerlink" title="Oauth2.0 協定的流程"></a>Oauth2.0 協定的流程</h2><p>Oauth 2.0授權的授予方式可以細分位置四種</p>
+<h2 id="Ex-用Google驗證登入Shoppe-tw-的-Oauth2-0-流程"><a href="#Ex-用Google驗證登入Shoppe-tw-的-Oauth2-0-流程" class="headerlink" title="Ex. 用Google驗證登入Shoppe.tw 的 Oauth2.0 流程"></a>Ex. 用Google驗證登入Shoppe.tw 的 Oauth2.0 流程</h2><p><img src="./Oauth_flow_ex.jpeg" alt="Oauth2.0 flow"></p>
+<h2 id="Oauth2-0-授權的四種授與方式"><a href="#Oauth2-0-授權的四種授與方式" class="headerlink" title="Oauth2.0 授權的四種授與方式"></a>Oauth2.0 授權的四種授與方式</h2><p>Oauth 2.0授權的授予方式可以細分位置四種</p>
 <ol>
 <li>授權碼（Authorization code）</li>
 <li>隱性（Implicit）</li>
 <li>資源擁有者的密碼憑證（Resource owner password credentials）</li>
 <li>客戶憑證（Client credentials）</li>
 </ol>
-<p>這四種的選擇可以根據下列三點來判斷</p>
+<p>這四種授予方式稍後會再詳述。至於要用哪種方式？可以根據下列三點來判斷：</p>
 <ol>
-<li>存取token（Access token）由誰持有</li>
-<li>客戶的型態為何？</li>
-<li>客戶與資源伺服器是第一方還第三方關係</li>
+<li><p>存取token（Access token）由誰持有</p>
+<ol>
+<li>token 存放在固定機器</li>
+<li>token由使用者持有</li>
 </ol>
+</li>
+<li><p>客戶的型態為何？</p>
+<ol>
+<li>網站應用<ol>
+<li>有server的網站應用</li>
+<li>純粹只有前端的網頁</li>
+</ol>
+</li>
+<li>原生應用（行動裝置App）</li>
+</ol>
+</li>
+<li><p>客戶與資源伺服器是 <strong>第一方</strong> 還 <strong>第三方</strong> 關係</p>
+<ol>
+<li>Instagram想讓使用者能使用Facebook身份登入，由於Instagram與Facebook是同公司的兩個服務，兩者是第一方關係。</li>
+<li>Spotify想讓使用者能使用Facebook身份登入，Spotify與Facebook是不同公司，兩者是第三方關係。</li>
+</ol>
+</li>
+</ol>
+<p><img src="./Oauth.001.jpeg" alt="Determine the grant type"></p>
+<h3 id="刷新的token（可選擇是否使用）"><a href="#刷新的token（可選擇是否使用）" class="headerlink" title="刷新的token（可選擇是否使用）"></a>刷新的token（可選擇是否使用）</h3><p>我們可以設計存取token是有時效的，過期後就無法使用。客戶端若需要繼續存取被保護資源，可以透過先前提供的刷新token，取得新的存取token。</p>
+<p><img src="./Oauth_refresh.jpeg" alt="Grant type with refresh token"></p>
 <h2 id="Refs"><a href="#Refs" class="headerlink" title="Refs"></a>Refs</h2><p><a href="tools.ietf.org/html/rfc6749">Oauth2.0的官方文件</a><br><a href="https://alexbilbie.com/guide-to-oauth-2-grants/" target="_blank" rel="noopener">A Guide To OAuth 2.0 Grants - Alex Bilbie</a></p>
 
 
