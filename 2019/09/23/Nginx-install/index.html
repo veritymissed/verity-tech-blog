@@ -13,16 +13,13 @@
     
 
     
-        <meta name="description" content="前言最近要來整理Oauth的筆記，直接先從Oauth2.0開始。
-根據Oauth2.0的官方文件，先列出2.0的重點：
+        <meta name="description" content="預備
+Nginx官方的文件寫的蠻容易理解，我就直接照他的文件 Installing NGINX Open Source 來做。
 
-Oauth2.0 協定的流程
-名詞解釋
-Oauth2.0 授權的四種授與方式
-刷新的token（可選擇是否使用）
+我的環境為Ubnutu 18.04(“Bionic”)
 
-Oauth2.0 協定的流程
-名詞定義解釋我們些列出Oauth"/>
+
+安裝流程1.12sudo wget https://nginx.org/keys/nginx_signing."/>
     
 
     <!--Author-->
@@ -32,21 +29,18 @@ Oauth2.0 協定的流程
 
     <!--Open Graph Title-->
     
-        <meta property="og:title" content="Oauth 2.0 筆記（一），流程與名詞解釋"/>
+        <meta property="og:title" content="Nginx 開源版本安裝"/>
     
 
     <!--Open Graph Description-->
     
-        <meta property="og:description" content="前言最近要來整理Oauth的筆記，直接先從Oauth2.0開始。
-根據Oauth2.0的官方文件，先列出2.0的重點：
+        <meta property="og:description" content="預備
+Nginx官方的文件寫的蠻容易理解，我就直接照他的文件 Installing NGINX Open Source 來做。
 
-Oauth2.0 協定的流程
-名詞解釋
-Oauth2.0 授權的四種授與方式
-刷新的token（可選擇是否使用）
+我的環境為Ubnutu 18.04(“Bionic”)
 
-Oauth2.0 協定的流程
-名詞定義解釋我們些列出Oauth"/>
+
+安裝流程1.12sudo wget https://nginx.org/keys/nginx_signing."/>
     
 
     <!--Open Graph Site Name-->
@@ -73,7 +67,7 @@ Oauth2.0 協定的流程
 
     <!-- Title -->
     
-    <title>Oauth 2.0 筆記（一），流程與名詞解釋 - Hexo</title>
+    <title>Nginx 開源版本安裝 - Hexo</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet"/>
@@ -198,13 +192,13 @@ Oauth2.0 協定的流程
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
                 <div class="post-heading">
-                    <h1>Oauth 2.0 筆記（一），流程與名詞解釋</h1>
+                    <h1>Nginx 開源版本安裝</h1>
                     
                     <span class="meta">
                         <!-- Date and Author -->
                         
                         
-                            2020-02-25
+                            2019-09-23
                         
                     </span>
                 </div>
@@ -225,7 +219,7 @@ Oauth2.0 協定的流程
                         
 
 
-<a href="/tags/Auth/">#Auth</a> <a href="/tags/Oauth/">#Oauth</a> <a href="/tags/Web/">#Web</a> <a href="/tags/Login/">#Login</a> <a href="/tags/SignIn/">#SignIn</a>
+<a href="/tags/Web/">#Web</a> <a href="/tags/Nginx/">#Nginx</a> <a href="/tags/DevOps/">#DevOps</a> <a href="/tags/Backend/">#Backend</a> <a href="/tags/Security/">#Security</a> <a href="/tags/SSL/">#SSL</a> <a href="/tags/Linux/">#Linux</a> <a href="/tags/Server/">#Server</a>
 
 
                     
@@ -240,74 +234,61 @@ Oauth2.0 協定的流程
 
             <!-- Post Main Content -->
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>最近要來整理Oauth的筆記，直接先從Oauth2.0開始。</p>
-<p>根據<a href="tools.ietf.org/html/rfc6749">Oauth2.0的官方文件</a>，先列出2.0的重點：</p>
-<ul>
-<li>Oauth2.0 協定的流程</li>
-<li>名詞解釋</li>
-<li>Oauth2.0 授權的四種授與方式</li>
-<li>刷新的token（可選擇是否使用）</li>
-</ul>
-<h2 id="Oauth2-0-協定的流程"><a href="#Oauth2-0-協定的流程" class="headerlink" title="Oauth2.0 協定的流程"></a>Oauth2.0 協定的流程</h2><p><img src="./Oauth_flow.jpeg" alt="Oauth2.0 flow"></p>
-<h2 id="名詞定義解釋"><a href="#名詞定義解釋" class="headerlink" title="名詞定義解釋"></a>名詞定義解釋</h2><p>我們些列出Oauth2.0裡面常見的角色與名詞，他們在官方文件裡有特定的名稱與定義。</p>
-<ul>
-<li><strong>受保護的資源（Protected resources）</strong>：與個人隱私等相關的資料。例如Email、姓名、性別、生日、居住地、喜好等</li>
-</ul>
-<p>四個角色：</p>
-<ol>
-<li><p><strong>資源擁有者（Resource owner）</strong>：上述受保護資源的擁有者，就是使用者。例如我在Facebook註冊的姓名、性別與點讚的頁面等，這些就是受保護的資源，我就是資源擁有者。</p>
+                <h2 id="預備"><a href="#預備" class="headerlink" title="預備"></a>預備</h2><ul>
+<li><p>Nginx官方的文件寫的蠻容易理解，我就直接照他的文件 <a href="https://docs.nginx.com/nginx/admin-guide/installing-nginx/installing-nginx-open-source/" target="_blank" rel="noopener">Installing NGINX Open Source</a> 來做。</p>
 </li>
-<li><p><strong>資源伺服器（Resource server）</strong>：存放這些受保護資源的伺服器。例如Facebook/Google內部專門存放使用者相關個人資料與喜好的伺服器。</p>
-</li>
-<li><p><strong>客戶/用戶（Client）</strong>：這邊容易與使用者 - 資源擁有者搞混；這裡的客戶指的是想使用驗證服務，並存取受保護資源的應用程式。例如Momo / Pchome等購物網、希望能讓消費者直接透過Facebook/Google的帳號登入，不用額外在購物網站上完成繁雜的註冊流程。這邊使用驗證身份服務的網站就是客戶（Client），各種需要身份驗證服務的Mobile App也都是客戶。</p>
-</li>
-<li><p><strong>授權伺服器（Authorization server）</strong>：這個伺服器執行驗證並授權的流程：驗證資源擁有者的身份成功後，提供客戶存取受保護資源的token。</p>
-</li>
-</ol>
-<p>除此之外還有：</p>
-<ul>
-<li><p><strong>存取token（Access token）</strong>：用來存取受保護資源的憑證。</p>
-</li>
-<li><p><strong>刷新token（Refresh token）</strong>：舊的存取token無效或過期後，用來獲得新的存取token。</p>
+<li><p>我的環境為Ubnutu 18.04(“Bionic”)</p>
 </li>
 </ul>
-<h2 id="Ex-用Google驗證登入Shoppe-tw-的-Oauth2-0-流程"><a href="#Ex-用Google驗證登入Shoppe-tw-的-Oauth2-0-流程" class="headerlink" title="Ex. 用Google驗證登入Shoppe.tw 的 Oauth2.0 流程"></a>Ex. 用Google驗證登入Shoppe.tw 的 Oauth2.0 流程</h2><p><img src="./Oauth_flow_ex.jpeg" alt="Oauth2.0 flow"></p>
-<h2 id="Oauth2-0-授權的四種授與方式"><a href="#Oauth2-0-授權的四種授與方式" class="headerlink" title="Oauth2.0 授權的四種授與方式"></a>Oauth2.0 授權的四種授與方式</h2><p>Oauth 2.0授權的授予方式可以細分位置四種</p>
-<ol>
-<li>授權碼（Authorization code）</li>
-<li>隱性（Implicit）</li>
-<li>資源擁有者的密碼憑證（Resource owner password credentials）</li>
-<li>客戶憑證（Client credentials）</li>
+<h2 id="安裝流程"><a href="#安裝流程" class="headerlink" title="安裝流程"></a>安裝流程</h2><h3 id="1"><a href="#1" class="headerlink" title="1."></a>1.</h3><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo wget https://nginx.org/keys/nginx_signing.key</span><br><span class="line">sudo apt-key add nginx_signing.key</span><br></pre></td></tr></table></figure>
+
+<h3 id="2-更改"><a href="#2-更改" class="headerlink" title="2. 更改"></a>2. 更改</h3><p>我們要使用<code>apt-get</code>下載Nginx，直接在<code>/etc/apt/sources.list</code>新增打算安裝Nginx的版本跟位置。格式如下，<code>&lt;CODENAME&gt;</code>是Ubuntu版本的名稱。</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">deb https://nginx.org/packages/mainline/debian/ &lt;CODENAME&gt; nginx</span><br><span class="line">deb-src https://nginx.org/packages/mainline/debian/ &lt;CODENAME&gt; nginx</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>列一下Ubuntu官網查到的版本名稱：</p>
+</blockquote>
+<ul>
+<li>Debian 9 (“Stretch”)</li>
+<li>Debian 10 (“Buster”)</li>
+<li>Ubuntu 16.04 LTS (“Xenial”) (i386, x86_64, ppc64le, - aarch64)</li>
+<li>Ubuntu 18.04 LTS (“Bionic”)</li>
+<li>Ubuntu 19.04 (“Disco”)</li>
+<li>Ubuntu 19.10 (“Eoan”)</li>
+</ul>
+<p>用vim編輯檔案<code>vim /etc/apt/sources.list</code></p>
+<p>我們可以看到原先在檔案裡面的其它套件使用的ubuntu版本名稱是<code>bionic</code>，按照這個名稱加入Nginx的source到最下面。</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">## Uncomment the following two lines to add software from Canonical's</span></span><br><span class="line"><span class="comment">## 'partner' repository.</span></span><br><span class="line"><span class="comment">## This software is not part of Ubuntu, but is offered by Canonical and the</span></span><br><span class="line"><span class="comment">## respective vendors as a service to Ubuntu users.</span></span><br><span class="line"><span class="comment"># deb http://archive.canonical.com/ubuntu bionic partner</span></span><br><span class="line"><span class="comment"># deb-src http://archive.canonical.com/ubuntu bionic partner</span></span><br><span class="line"></span><br><span class="line">deb http://security.ubuntu.com/ubuntu bionic-security main restricted</span><br><span class="line"><span class="comment"># deb-src http://security.ubuntu.com/ubuntu bionic-security main restricted</span></span><br><span class="line">deb http://security.ubuntu.com/ubuntu bionic-security universe</span><br><span class="line"><span class="comment"># deb-src http://security.ubuntu.com/ubuntu bionic-security universe</span></span><br><span class="line">deb http://security.ubuntu.com/ubuntu bionic-security multiverse</span><br><span class="line">deb [arch=amd64] https://download.docker.com/linux/ubuntu bionic stable</span><br><span class="line"><span class="comment"># deb-src [arch=amd64] https://download.docker.com/linux/ubuntu bionic stable</span></span><br><span class="line"><span class="comment"># deb-src http://security.ubuntu.com/ubuntu bionic-security multiverse</span></span><br><span class="line">deb http://archive.ubuntu.com/ubuntu bionic universe</span><br><span class="line"></span><br><span class="line"><span class="comment"># 加入 Nginx install的source，照上面使用`bionic`這個版本</span></span><br><span class="line">deb https://nginx.org/packages/mainline/ubuntu/ bionic nginx</span><br><span class="line">deb-src https://nginx.org/packages/mainline/ubuntu/ bionic nginx</span><br><span class="line">-- INSERT (paste) --</span><br></pre></td></tr></table></figure>
+
+<p>根據指令移除可能存在的舊版本，安裝剛剛在<code>source.list</code>中指定的nginx版本</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ sudo apt-get remove nginx-common</span><br><span class="line">$ sudo apt-get update</span><br><span class="line">$ sudo apt-get install nginx</span><br></pre></td></tr></table></figure>
+
+<p>安裝完後執行</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nginx</span><br></pre></td></tr></table></figure>
+
+<h3 id="檢查Nginx是否正確跑起來"><a href="#檢查Nginx是否正確跑起來" class="headerlink" title="檢查Nginx是否正確跑起來"></a>檢查Nginx是否正確跑起來</h3><ol>
+<li>ps - 用<code>ps</code> 檢查一下nginx是否執行中</li>
 </ol>
-<p>這四種授予方式稍後會再詳述。至於要用哪種方式？可以根據下列三點來判斷：</p>
-<ol>
-<li><p>存取token（Access token）由誰持有</p>
-<ol>
-<li>token 存放在固定機器</li>
-<li>token由使用者持有</li>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">ps aux | grep <span class="string">"nginx"</span></span><br><span class="line">...</span><br><span class="line">root      9463  0.0  0.1 141116  1552 ?        Ss   07:30   0:00 nginx: master process nginx</span><br><span class="line">www-data  9464  0.0  0.6 143788  6396 ?        S    07:30   0:00 nginx: worker process</span><br><span class="line">root      9466  0.0  0.1  14428  1088 pts/0    S+   07:30   0:00 grep --color=auto nginx</span><br></pre></td></tr></table></figure>
+
+<ol start="2">
+<li>curl - 用<code>curl</code>對localhost送出request</li>
 </ol>
-</li>
-<li><p>客戶的型態為何？</p>
-<ol>
-<li>網站應用<ol>
-<li>有server的網站應用</li>
-<li>純粹只有前端的網頁</li>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">curl -I 127.0.0.1</span><br><span class="line">...</span><br><span class="line">HTTP/1.1 200 OK</span><br><span class="line">Server: nginx/1.14.0 (Ubuntu)</span><br><span class="line">Date: Tue, 07 Apr 2020 07:52:45 GMT</span><br><span class="line">Content-Type: text/html</span><br><span class="line">Content-Length: 612</span><br><span class="line">Last-Modified: Tue, 07 Apr 2020 07:28:05 GMT</span><br><span class="line">Connection: keep-alive</span><br><span class="line">ETag: <span class="string">"5e8c2b85-264"</span></span><br><span class="line">Accept-Ranges: bytes</span><br></pre></td></tr></table></figure>
+
+<ol start="3">
+<li>瀏覽器打開<code>localhost</code>或是<code>127.0.0.1</code></li>
 </ol>
-</li>
-<li>原生應用（行動裝置App）</li>
-</ol>
-</li>
-<li><p>客戶與資源伺服器是 <strong>第一方</strong> 還 <strong>第三方</strong> 關係</p>
-<ol>
-<li>Instagram想讓使用者能使用Facebook身份登入，由於Instagram與Facebook是同公司的兩個服務，兩者是第一方關係。</li>
-<li>Spotify想讓使用者能使用Facebook身份登入，Spotify與Facebook是不同公司，兩者是第三方關係。</li>
-</ol>
-</li>
-</ol>
-<p><img src="./Oauth.001.jpeg" alt="Determine the grant type"></p>
-<h3 id="刷新的token（可選擇是否使用）"><a href="#刷新的token（可選擇是否使用）" class="headerlink" title="刷新的token（可選擇是否使用）"></a>刷新的token（可選擇是否使用）</h3><p>我們可以設計存取token是有時效的，過期後就無法使用。客戶端若需要繼續存取被保護資源，可以透過先前提供的刷新token，取得新的存取token。</p>
-<p><img src="./Oauth_refresh.jpeg" alt="Grant type with refresh token"></p>
-<h2 id="Refs"><a href="#Refs" class="headerlink" title="Refs"></a>Refs</h2><p><a href="tools.ietf.org/html/rfc6749">Oauth2.0的官方文件</a><br><a href="https://tools.ietf.org/html/rfc5849" target="_blank" rel="noopener">Oauth 的官方文件</a><br><a href="https://alexbilbie.com/guide-to-oauth-2-grants/" target="_blank" rel="noopener">A Guide To OAuth 2.0 Grants - Alex Bilbie</a><br><a href="https://oauth.net/2/grant-types/" target="_blank" rel="noopener">Oauth.net 2 - grant type</a><br><a href="https://blog.yorkxin.org/2013/09/30/oauth2-1-introduction.html" target="_blank" rel="noopener">Yu-Cheng Chuang’s Blog</a><br><a href="https://jwt.io/introduction/" target="_blank" rel="noopener">JWT</a></p>
+<p><img src="./browser.png" alt="browser"></p>
+<p>顯示畫面如上圖就是成功跑起Nginx了，Nginx會監聽 port 80。</p>
+<h2 id="Controlling-NGINX"><a href="#Controlling-NGINX" class="headerlink" title="Controlling NGINX"></a>Controlling NGINX</h2><p>就是 Nginx的指令，可以關閉、重新載入設定檔等的指令。</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nginx -s &lt;SIGNAL&gt;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>quit – Shut down gracefully</li>
+<li>reload – Reload the configuration file</li>
+<li>reopen – Reopen log files</li>
+<li>stop – Shut down immediately (fast shutdown)</li>
+</ul>
 
 
                 
