@@ -13,6 +13,15 @@
     
 
     
+        <meta name="description" content="整理一下幾個查閱某個domain的DNS的方式
+dig12# 列出全部TYPEdig google.com ANY +noall +answer
+
+nslookup12# 列出全部TYPEnslookup -type=any google.com
+
+host1host -a google.com
+
+"/>
+    
 
     <!--Author-->
     
@@ -21,10 +30,19 @@
 
     <!--Open Graph Title-->
     
-        <meta property="og:title" content=""/>
+        <meta property="og:title" content="查詢某個domain的DNS設定"/>
     
 
     <!--Open Graph Description-->
+    
+        <meta property="og:description" content="整理一下幾個查閱某個domain的DNS的方式
+dig12# 列出全部TYPEdig google.com ANY +noall +answer
+
+nslookup12# 列出全部TYPEnslookup -type=any google.com
+
+host1host -a google.com
+
+"/>
     
 
     <!--Open Graph Site Name-->
@@ -32,7 +50,7 @@
 
     <!--Type page-->
     
-        <meta property="og:type" content="website"/>
+        <meta property="og:type" content="article"/>
     
 
     <!--Page Cover-->
@@ -51,7 +69,7 @@
 
     <!-- Title -->
     
-    <title>彙整 - </title>
+    <title>查詢某個domain的DNS設定 - </title>
 
     <!-- Bootstrap Core CSS -->
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet"/>
@@ -168,127 +186,89 @@
 
 
     <!-- Main Content -->
-    
+    <!-- Page Header -->
+<!-- Set your background image for this header in your post front-matter: cover -->
 
-<!-- Page Header -->
-<!-- Set your background image for this header in the theme's configuration: index_cover -->
 <header class="intro-header" style="background-image: url('https://user-images.githubusercontent.com/6461602/76592396-33316e80-652e-11ea-8a83-fb3209225088.jpeg')">
     <div class="container">
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                <div class="site-heading">
-                    <h1>彙整</h1>
+                <div class="post-heading">
+                    <h1>查詢某個domain的DNS設定</h1>
+                    
+                    <span class="meta">
+                        <!-- Date and Author -->
+                        
+                        
+                            2019-07-03
+                        
+                    </span>
                 </div>
             </div>
         </div>
     </div>
 </header>
 
-<!-- Main Content -->
-<div class="container">
-    <div class="row">
-        <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+
+            <!-- Tags and categories -->
+           
+                <div class="col-lg-4 col-lg-offset-2 col-md-5 col-md-offset-1 post-tags">
+                    
+                        
+
+
+<a href="/tags/Web/">#Web</a> <a href="/tags/DevOps/">#DevOps</a> <a href="/tags/DNS/">#DNS</a> <a href="/tags/Network/">#Network</a> <a href="/tags/Linux/">#Linux</a>
+
+
+                    
+                </div>
+                <div class="col-lg-4 col-md-5 post-categories">
+                    
+                </div>
             
-                <div class="post-preview">
-    <a href="/2020/04/07/Nginx-install/">
-        <h1 class="post-title archive">
-            Nginx 開源版本安裝
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2020-04-07
-    </p>
-</div>
+
+            <!-- Gallery -->
             
-                <div class="post-preview">
-    <a href="/2020/03/23/Nginx-config/">
-        <h1 class="post-title archive">
-            Nginx 設定檔筆記
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2020-03-23
-    </p>
-</div>
-            
-                <div class="post-preview">
-    <a href="/2020/02/25/Oauth2/">
-        <h1 class="post-title archive">
-            Oauth 2.0 筆記（一），流程與名詞解釋
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2020-02-25
-    </p>
-</div>
-            
-                <div class="post-preview">
-    <a href="/2020/02/17/Oauth/">
-        <h1 class="post-title archive">
-            Oauth2.0 前世：OpenID, SSO, Oauth1.0
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2020-02-17
-    </p>
-</div>
-            
-                <div class="post-preview">
-    <a href="/2019/07/03/Check-DNS/">
-        <h1 class="post-title archive">
-            查詢某個domain的DNS設定
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2019-07-03
-    </p>
-</div>
-            
-                <div class="post-preview">
-    <a href="/2019/06/17/ExpressSslHttps/">
-        <h1 class="post-title archive">
-            Express server設定SSL，使用https建立安全連線
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2019-06-17
-    </p>
-</div>
-            
-                <div class="post-preview">
-    <a href="/2019/05/15/Link/">
-        <h1 class="post-title archive">
-            Linux link筆記
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2019-05-15
-    </p>
-</div>
-            
-            <div class="archive-before-pagination"></div>
-            <ul class="pager">
-    
-    
+
+            <!-- Post Main Content -->
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <p>整理一下幾個查閱某個domain的DNS的方式</p>
+<h2 id="dig"><a href="#dig" class="headerlink" title="dig"></a>dig</h2><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 列出全部TYPE</span></span><br><span class="line">dig google.com ANY +noall +answer</span><br></pre></td></tr></table></figure>
+
+<h2 id="nslookup"><a href="#nslookup" class="headerlink" title="nslookup"></a>nslookup</h2><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 列出全部TYPE</span></span><br><span class="line">nslookup -<span class="built_in">type</span>=any google.com</span><br></pre></td></tr></table></figure>
+
+<h2 id="host"><a href="#host" class="headerlink" title="host"></a>host</h2><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">host -a google.com</span><br></pre></td></tr></table></figure>
+
+
+<h2 id="References"><a href="#References" class="headerlink" title="References"></a>References</h2><ul>
+<li><a href="https://www.2daygeek.com/check-find-dns-records-of-domain-in-linux-terminal/" target="_blank" rel="noopener">3 Simple Ways to Check DNS (Domain Name Server) Records in the Linux Terminal</a></li>
 </ul>
+
+
+                
+            </div>
+
+            <!-- Comments -->
+            
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    
+    <hr />
+    <h3>留言:</h3>
+    <div id="disqus_thread">
+        <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript" target="_blank" rel="noopener">comments powered by Disqus.</a></noscript>
+    </div>
+
+
+
+                </div>
+            
         </div>
     </div>
-</div>
-
+</article>
 
     <!-- Footer -->
     <hr />
@@ -358,7 +338,7 @@
         var dsq = document.createElement('script');
         dsq.type = 'text/javascript';
         dsq.async = true;
-        dsq.src = '//' + disqus_shortname + '.disqus.com/count.js';
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
         (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
     }());
 </script>
