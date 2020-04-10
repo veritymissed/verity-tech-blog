@@ -13,16 +13,8 @@
     
 
     
-        <meta name="description" content="前言最近要來整理Oauth的筆記，直接先從Oauth2.0開始。
-根據Oauth2.0的官方文件，先列出2.0的重點：
-
-Oauth2.0 協定的流程
-名詞解釋
-Oauth2.0 授權的四種授與方式
-刷新的token（可選擇是否使用）
-
-Oauth2.0 協定的流程
-名詞定義解釋我們些列出Oauth"/>
+        <meta name="description" content="Linux link 相關筆記軟連結、硬連結inodeinode這東西可以想像成指標（pointer），在Linux系統中，他會指向硬碟的某個物理位置
+123456789101112ls -li # 可以列出檔案的inode值256342 lrwxrwxrwx 1 root root  47 Apr"/>
     
 
     <!--Author-->
@@ -32,21 +24,13 @@ Oauth2.0 協定的流程
 
     <!--Open Graph Title-->
     
-        <meta property="og:title" content="Oauth 2.0 筆記（一），流程與名詞解釋"/>
+        <meta property="og:title" content="Linux link筆記"/>
     
 
     <!--Open Graph Description-->
     
-        <meta property="og:description" content="前言最近要來整理Oauth的筆記，直接先從Oauth2.0開始。
-根據Oauth2.0的官方文件，先列出2.0的重點：
-
-Oauth2.0 協定的流程
-名詞解釋
-Oauth2.0 授權的四種授與方式
-刷新的token（可選擇是否使用）
-
-Oauth2.0 協定的流程
-名詞定義解釋我們些列出Oauth"/>
+        <meta property="og:description" content="Linux link 相關筆記軟連結、硬連結inodeinode這東西可以想像成指標（pointer），在Linux系統中，他會指向硬碟的某個物理位置
+123456789101112ls -li # 可以列出檔案的inode值256342 lrwxrwxrwx 1 root root  47 Apr"/>
     
 
     <!--Open Graph Site Name-->
@@ -73,7 +57,7 @@ Oauth2.0 協定的流程
 
     <!-- Title -->
     
-    <title>Oauth 2.0 筆記（一），流程與名詞解釋 - </title>
+    <title>Linux link筆記 - </title>
 
     <!-- Bootstrap Core CSS -->
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet"/>
@@ -198,13 +182,13 @@ Oauth2.0 協定的流程
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
                 <div class="post-heading">
-                    <h1>Oauth 2.0 筆記（一），流程與名詞解釋</h1>
+                    <h1>Linux link筆記</h1>
                     
                     <span class="meta">
                         <!-- Date and Author -->
                         
                         
-                            2020-02-25
+                            2019-05-15
                         
                     </span>
                 </div>
@@ -225,7 +209,7 @@ Oauth2.0 協定的流程
                         
 
 
-<a href="/tags/Auth/">#Auth</a> <a href="/tags/Oauth/">#Oauth</a> <a href="/tags/Web/">#Web</a> <a href="/tags/Login/">#Login</a> <a href="/tags/SignIn/">#SignIn</a>
+<a href="/tags/linux/">#linux</a> <a href="/tags/system/">#system</a> <a href="/tags/link/">#link</a> <a href="/tags/ubuntu/">#ubuntu</a>
 
 
                     
@@ -240,74 +224,29 @@ Oauth2.0 協定的流程
 
             <!-- Post Main Content -->
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>最近要來整理Oauth的筆記，直接先從Oauth2.0開始。</p>
-<p>根據<a href="tools.ietf.org/html/rfc6749">Oauth2.0的官方文件</a>，先列出2.0的重點：</p>
-<ul>
-<li>Oauth2.0 協定的流程</li>
-<li>名詞解釋</li>
-<li>Oauth2.0 授權的四種授與方式</li>
-<li>刷新的token（可選擇是否使用）</li>
+                <h1 id="Linux-link-相關筆記"><a href="#Linux-link-相關筆記" class="headerlink" title="Linux link 相關筆記"></a>Linux link 相關筆記</h1><h2 id="軟連結、硬連結"><a href="#軟連結、硬連結" class="headerlink" title="軟連結、硬連結"></a>軟連結、硬連結</h2><h3 id="inode"><a href="#inode" class="headerlink" title="inode"></a>inode</h3><p><code>inode</code>這東西可以想像成指標（pointer），在Linux系統中，他會指向硬碟的某個物理位置</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">ls -li <span class="comment"># 可以列出檔案的inode值</span></span><br><span class="line"></span><br><span class="line">256342 lrwxrwxrwx 1 root root  47 Apr 10 08:24 blogverity -&gt; /etc/nginx/sites-available/blogverity.info.conf</span><br><span class="line">256081 lrwxrwxrwx 1 root root  34 Apr  7 07:28 default -&gt; /etc/nginx/sites-available/default</span><br><span class="line">256343 -rw-r--r-- 2 root root 449 Apr 10 08:04 hardlink</span><br><span class="line"></span><br><span class="line"><span class="comment"># /etc/nginx/sites-available</span></span><br><span class="line">ls -li</span><br><span class="line"></span><br><span class="line">256343 -rw-r--r-- 2 root root  449 Apr 10 08:04 blogverity.info.conf</span><br><span class="line"></span><br><span class="line"><span class="comment">#root左邊那個2就是硬連結的數量</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="硬連結（Hard-link）"><a href="#硬連結（Hard-link）" class="headerlink" title="硬連結（Hard link）:"></a>硬連結（Hard link）:</h3><p>同一個inode值，如果有其他link也是這個值，就是這個inode的 <strong>硬連結</strong>，硬連結數量 <strong>可以多個</strong>，刪除其一會減少連結數量。只有連結數量為1時刪除會刪除整個檔案。</p>
+<h3 id="軟連結（Symbolic-link）"><a href="#軟連結（Symbolic-link）" class="headerlink" title="軟連結（Symbolic link）:"></a>軟連結（Symbolic link）:</h3><p>指向一個絕對路徑或相對路徑，刪除軟連結本身，不會影響目標檔案。若目標檔案被刪除或被移動，軟連結本身不會變動，這軟連結可以稱為 <strong>被遺棄</strong>。</p>
+<p>從上面可以看到，軟連結只會顯示 <code>-&gt;</code>，硬連結不會特別顯示這個箭頭，但硬連結的inode值會與指向的目標inode值相同。</p>
+<h2 id="ln-—-建立連結指令"><a href="#ln-—-建立連結指令" class="headerlink" title="ln — 建立連結指令"></a>ln — 建立連結指令</h2><p>預設都是建立硬連結（Hard link）</p>
+<p><code>ln 目標的路徑 連結名稱</code></p>
+<p>若要建立軟連結（Symbolic link）: <code>ln -s 目標的路徑 連結名稱</code></p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">ln -s /etc/nginx/sites-available/blogverity.info.conf blogverity</span><br><span class="line"></span><br><span class="line">ll</span><br><span class="line">(等於ls -all)列出所有檔案</span><br><span class="line"></span><br><span class="line">blogverity -&gt; /etc/nginx/sites-available/blogverity.info.conf</span><br></pre></td></tr></table></figure>
+
+<h2 id="unlink-刪除連結"><a href="#unlink-刪除連結" class="headerlink" title="unlink 刪除連結"></a>unlink 刪除連結</h2><p><code>unlink 連結名稱</code></p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">blogverity -&gt; /etc/nginx/sites-available/blogverity.info.conf</span><br><span class="line">unlink blogverity</span><br><span class="line"></span><br><span class="line">...</span><br><span class="line">ls -all 檢查連結已刪除</span><br><span class="line"></span><br><span class="line"><span class="comment">#若連結指向的是一個目錄（資料夾）</span></span><br><span class="line">unilink target_dir/</span><br></pre></td></tr></table></figure>
+
+
+<h2 id="ln-常用參數"><a href="#ln-常用參數" class="headerlink" title="ln 常用參數"></a>ln 常用參數</h2><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">-s, –symbolic: 建立軟連結symbolic link。</span><br><span class="line">-f, –force: 若目標檔案已經存在，直接覆蓋檔案。</span><br><span class="line">-i, –interactive: 若目標檔案已經存在，會先詢問，不會直接覆蓋檔案。</span><br><span class="line">-n, –no-clobber： 不會覆蓋任何檔案。</span><br></pre></td></tr></table></figure>
+
+
+<h2 id="References"><a href="#References" class="headerlink" title="References"></a>References</h2><ul>
+<li><a href="https://zh.wikipedia.org/wiki/符号链接" target="_blank" rel="noopener">Wili</a></li>
+<li><a href="https://www.opencli.com/linux/ln-create-link-command" target="_blank" rel="noopener">LINUX 技術手札</a></li>
+<li><a href="https://codertw.com/程式語言/561681/" target="_blank" rel="noopener">Linux的硬連結和軟連線（符號連結）</a></li>
 </ul>
-<h2 id="Oauth2-0-協定的流程"><a href="#Oauth2-0-協定的流程" class="headerlink" title="Oauth2.0 協定的流程"></a>Oauth2.0 協定的流程</h2><p><img src="./Oauth_flow.jpeg" alt="Oauth2.0 flow"></p>
-<h2 id="名詞定義解釋"><a href="#名詞定義解釋" class="headerlink" title="名詞定義解釋"></a>名詞定義解釋</h2><p>我們些列出Oauth2.0裡面常見的角色與名詞，他們在官方文件裡有特定的名稱與定義。</p>
-<ul>
-<li><strong>受保護的資源（Protected resources）</strong>：與個人隱私等相關的資料。例如Email、姓名、性別、生日、居住地、喜好等</li>
-</ul>
-<p>四個角色：</p>
-<ol>
-<li><p><strong>資源擁有者（Resource owner）</strong>：上述受保護資源的擁有者，就是使用者。例如我在Facebook註冊的姓名、性別與點讚的頁面等，這些就是受保護的資源，我就是資源擁有者。</p>
-</li>
-<li><p><strong>資源伺服器（Resource server）</strong>：存放這些受保護資源的伺服器。例如Facebook/Google內部專門存放使用者相關個人資料與喜好的伺服器。</p>
-</li>
-<li><p><strong>客戶/用戶（Client）</strong>：這邊容易與使用者 - 資源擁有者搞混；這裡的客戶指的是想使用驗證服務，並存取受保護資源的應用程式。例如Momo / Pchome等購物網、希望能讓消費者直接透過Facebook/Google的帳號登入，不用額外在購物網站上完成繁雜的註冊流程。這邊使用驗證身份服務的網站就是客戶（Client），各種需要身份驗證服務的Mobile App也都是客戶。</p>
-</li>
-<li><p><strong>授權伺服器（Authorization server）</strong>：這個伺服器執行驗證並授權的流程：驗證資源擁有者的身份成功後，提供客戶存取受保護資源的token。</p>
-</li>
-</ol>
-<p>除此之外還有：</p>
-<ul>
-<li><p><strong>存取token（Access token）</strong>：用來存取受保護資源的憑證。</p>
-</li>
-<li><p><strong>刷新token（Refresh token）</strong>：舊的存取token無效或過期後，用來獲得新的存取token。</p>
-</li>
-</ul>
-<h2 id="Ex-用Google驗證登入Shoppe-tw-的-Oauth2-0-流程"><a href="#Ex-用Google驗證登入Shoppe-tw-的-Oauth2-0-流程" class="headerlink" title="Ex. 用Google驗證登入Shoppe.tw 的 Oauth2.0 流程"></a>Ex. 用Google驗證登入Shoppe.tw 的 Oauth2.0 流程</h2><p><img src="./Oauth_flow_ex.jpeg" alt="Oauth2.0 flow"></p>
-<h2 id="Oauth2-0-授權的四種授與方式"><a href="#Oauth2-0-授權的四種授與方式" class="headerlink" title="Oauth2.0 授權的四種授與方式"></a>Oauth2.0 授權的四種授與方式</h2><p>Oauth 2.0授權的授予方式可以細分位置四種</p>
-<ol>
-<li>授權碼（Authorization code）</li>
-<li>隱性（Implicit）</li>
-<li>資源擁有者的密碼憑證（Resource owner password credentials）</li>
-<li>客戶憑證（Client credentials）</li>
-</ol>
-<p>這四種授予方式稍後會再詳述。至於要用哪種方式？可以根據下列三點來判斷：</p>
-<ol>
-<li><p>存取token（Access token）由誰持有</p>
-<ol>
-<li>token 存放在固定機器</li>
-<li>token由使用者持有</li>
-</ol>
-</li>
-<li><p>客戶的型態為何？</p>
-<ol>
-<li>網站應用<ol>
-<li>有server的網站應用</li>
-<li>純粹只有前端的網頁</li>
-</ol>
-</li>
-<li>原生應用（行動裝置App）</li>
-</ol>
-</li>
-<li><p>客戶與資源伺服器是 <strong>第一方</strong> 還 <strong>第三方</strong> 關係</p>
-<ol>
-<li>Instagram想讓使用者能使用Facebook身份登入，由於Instagram與Facebook是同公司的兩個服務，兩者是第一方關係。</li>
-<li>Spotify想讓使用者能使用Facebook身份登入，Spotify與Facebook是不同公司，兩者是第三方關係。</li>
-</ol>
-</li>
-</ol>
-<p><img src="./Oauth.001.jpeg" alt="Determine the grant type"></p>
-<h3 id="刷新的token（可選擇是否使用）"><a href="#刷新的token（可選擇是否使用）" class="headerlink" title="刷新的token（可選擇是否使用）"></a>刷新的token（可選擇是否使用）</h3><p>我們可以設計存取token是有時效的，過期後就無法使用。客戶端若需要繼續存取被保護資源，可以透過先前提供的刷新token，取得新的存取token。</p>
-<p><img src="./Oauth_refresh.jpeg" alt="Grant type with refresh token"></p>
-<h2 id="Refs"><a href="#Refs" class="headerlink" title="Refs"></a>Refs</h2><p><a href="tools.ietf.org/html/rfc6749">Oauth2.0的官方文件</a><br><a href="https://tools.ietf.org/html/rfc5849" target="_blank" rel="noopener">Oauth 的官方文件</a><br><a href="https://alexbilbie.com/guide-to-oauth-2-grants/" target="_blank" rel="noopener">A Guide To OAuth 2.0 Grants - Alex Bilbie</a><br><a href="https://oauth.net/2/grant-types/" target="_blank" rel="noopener">Oauth.net 2 - grant type</a><br><a href="https://blog.yorkxin.org/2013/09/30/oauth2-1-introduction.html" target="_blank" rel="noopener">Yu-Cheng Chuang’s Blog</a><br><a href="https://jwt.io/introduction/" target="_blank" rel="noopener">JWT</a></p>
 
 
                 
