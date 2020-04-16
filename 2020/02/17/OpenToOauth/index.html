@@ -13,27 +13,9 @@
     
 
     
-        <meta name="description" content="前言
-開放授權
-授權給第三方存取自己網站上的私密資料(Protected resources) 可能設定
-特定時段
-
-Protected resources
-
-相片
-
-影片
-
-聯絡人列表
-
-提供權杖
-
-源自Twitter的OpenID
-
-Oauth 2.0
-
-
-數位身份（Digital Identi"/>
+        <meta name="description" content="前言建議直接了解2.0後再回來看看1.0在幹嘛，這樣反而會比較好懂。
+關於2.0，可以直接參考Oauth 2.0 筆記（一），流程與名詞解釋
+首先講到Oauth1.0就要從OpenID講起，但不管是OpenID/Oauth1.0/Oauth2.0，我們可以從他們更早以前的一個概念：單一登入SSO(S"/>
     
 
     <!--Author-->
@@ -43,32 +25,14 @@ Oauth 2.0
 
     <!--Open Graph Title-->
     
-        <meta property="og:title" content="Oauth2.0 前世：OpenID, SSO, Oauth1.0"/>
+        <meta property="og:title" content="Oauth2.0 前世：OpenID, Oauth1.0"/>
     
 
     <!--Open Graph Description-->
     
-        <meta property="og:description" content="前言
-開放授權
-授權給第三方存取自己網站上的私密資料(Protected resources) 可能設定
-特定時段
-
-Protected resources
-
-相片
-
-影片
-
-聯絡人列表
-
-提供權杖
-
-源自Twitter的OpenID
-
-Oauth 2.0
-
-
-數位身份（Digital Identi"/>
+        <meta property="og:description" content="前言建議直接了解2.0後再回來看看1.0在幹嘛，這樣反而會比較好懂。
+關於2.0，可以直接參考Oauth 2.0 筆記（一），流程與名詞解釋
+首先講到Oauth1.0就要從OpenID講起，但不管是OpenID/Oauth1.0/Oauth2.0，我們可以從他們更早以前的一個概念：單一登入SSO(S"/>
     
 
     <!--Open Graph Site Name-->
@@ -95,7 +59,7 @@ Oauth 2.0
 
     <!-- Title -->
     
-    <title>Oauth2.0 前世：OpenID, SSO, Oauth1.0 - </title>
+    <title>Oauth2.0 前世：OpenID, Oauth1.0 - </title>
 
     <!-- Bootstrap Core CSS -->
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet"/>
@@ -220,7 +184,7 @@ Oauth 2.0
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
                 <div class="post-heading">
-                    <h1>Oauth2.0 前世：OpenID, SSO, Oauth1.0</h1>
+                    <h1>Oauth2.0 前世：OpenID, Oauth1.0</h1>
                     
                     <span class="meta">
                         <!-- Date and Author -->
@@ -262,48 +226,55 @@ Oauth 2.0
 
             <!-- Post Main Content -->
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><ul>
-<li>開放授權</li>
-<li>授權給第三方存取自己網站上的私密資料(Protected resources) 可能設定</li>
-<li>特定時段</li>
+                <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p><strong>建議直接了解2.0後再回來看看1.0在幹嘛，這樣反而會比較好懂。</strong></p>
+<p>關於2.0，可以直接參考<a href="https://blog.verityfolio.site/2020/02/25/Oauth2/">Oauth 2.0 筆記（一），流程與名詞解釋</a></p>
+<p>首先講到Oauth1.0就要從OpenID講起，但不管是OpenID/Oauth1.0/Oauth2.0，我們可以從他們更早以前的一個概念：單一登入SSO(Single Sign On)講起。</p>
+<h2 id="單一登入SSO"><a href="#單一登入SSO" class="headerlink" title="單一登入SSO"></a>單一登入SSO</h2><p>一種設計的概念，希望能透過單一入口登入，存取多個有關聯的服務，不需要針對各個服務個別登入。在linux系統中通常用LDAP來實作，可以一次用同一個身份登入多個linux server。當然OpenID也算是SSO的一種（基於HTTP），由OpenID衍生出的Oauth也是SSO。</p>
+<h3 id="Note-可以視為SSO的有："><a href="#Note-可以視為SSO的有：" class="headerlink" title="Note: 可以視為SSO的有："></a>Note: 可以視為SSO的有：</h3><ul>
+<li>LDAP(管理linux server)</li>
+<li>OpenID</li>
+<li>Oauth 1.0</li>
+<li>Oauth 2.0</li>
 </ul>
-<p>Protected resources</p>
+<h3 id="SSO的好處"><a href="#SSO的好處" class="headerlink" title="SSO的好處"></a>SSO的好處</h3><ul>
+<li>想讓第三方網站存取我放在某個提供者那邊的資料，不需要給這個第三方帳號密碼</li>
+<li>減少註冊太多組使用者與密碼的管理麻煩</li>
+<li>減少相同身份的使用者在不同服務輸入帳密的時間</li>
+<li>減少與密碼有關的request處理成本……畢竟驗證可以丟給身份提供者來做</li>
+</ul>
+<h2 id="OpenID"><a href="#OpenID" class="headerlink" title="OpenID"></a>OpenID</h2><p>一開始就想做一個 <strong>身份認證</strong> 的服務，讓使用者在其他網路服務中可以輕鬆讓網站確認數位身份（不用註冊就能登入）。</p>
 <ul>
-<li><p>相片</p>
-</li>
-<li><p>影片</p>
-</li>
-<li><p>聯絡人列表</p>
-</li>
-<li><p>提供權杖</p>
-</li>
-<li><p>源自Twitter的OpenID</p>
-</li>
-<li><p>Oauth 2.0</p>
-</li>
+<li>終端使用者（End user），想像某個網站表達身份的人，就是某個吃瓜群眾上了某個網站，想讓這個網站知道自己的身份。就像是我們還沒註冊購物網站的會員，但購物車要結帳時需要有會員紀錄跟email資料等讓購物網站能確認訂單與物流流程</li>
+<li>標示（Identifier），終端使用者會有的一個url，如果終端使用者想登入某個依賴方，須將這個url先登記在依賴方，</li>
+<li>身份提供者（Identity Provider, IdP），肯定是有很多人註冊會員的網站，資料庫打開一整串的會員跟會員的個人資料。這些會員跑到其他網站時，能用這個網站的會員來提供數位身份，就不用特別在註冊。</li>
+<li>依賴方（Relying Party, RP），就是剛剛說的那個想用別人的會員資料讓訪客可以快速登入使用數位身份的……尤其很懶得做註冊系統以及會員管理系統就很容易一直當依賴方。</li>
 </ul>
-<h2 id="數位身份（Digital-Identity）"><a href="#數位身份（Digital-Identity）" class="headerlink" title="數位身份（Digital Identity）"></a>數位身份（Digital Identity）</h2><ul>
-<li>Public/Private keys 公鑰/私鑰</li>
-<li>Private key只有本人知道</li>
-<li>有一個身份認證的機構，</li>
-<li>SSH</li>
+<h2 id="Oauth1-0"><a href="#Oauth1-0" class="headerlink" title="Oauth1.0:"></a>Oauth1.0:</h2><p>Twitter用OpenID用一用，漸漸覺得需要一個更明確的規範，來應付未來更複雜的第三方資料存取的設計，所以他們開始設計撰寫Oauth1.0的標準（原來是twitter….）。這個標準希望能允許第三方用戶存取某個伺服器上受保護的資源。</p>
+<p>驗證方式比較類似2.0的 <strong>授權碼（Authorization code）</strong>。</p>
+<h2 id="Oauth-2-0"><a href="#Oauth-2-0" class="headerlink" title="Oauth 2.0:"></a>Oauth 2.0:</h2><p>Oauth1.0的下個版本，著重在客戶端（各種App/網站）開發的容易與否。除了角色名稱的更動（如consumer -&gt; client）以外，還定義了四種授權方式：</p>
+<ol>
+<li>授權碼（Authorization code）</li>
+<li>隱性（Implicit）</li>
+<li>資源擁有者的密碼憑證（Resource owner password credentials）</li>
+<li>客戶憑證（Client credentials）</li>
+</ol>
+<h2 id="各種名詞比較"><a href="#各種名詞比較" class="headerlink" title="各種名詞比較"></a>各種名詞比較</h2><p>因為這三個規範都有明確相同權責的角色，但是每個規範裡面的名稱又不大一樣。<br>所以我在整理成表格之前，其實根本把<strong>不同規範的名詞搞混</strong>。拿著這張表，研讀OpenID/Oauth1.0的相關文件能很快抓到角色與流程的感覺。</p>
+<p>Ex. 有些API裡面會有<code>consumer_key</code>，我之前一直沒辦法搞清楚它跟<code>client_key</code>的差別，整理完才知道他們(consumer與client)兩個的角色是一樣的，只是在Oauth1.0與2.0的名稱不同。</p>
+<p>所以我才覺得，要了解Oauth，一開始從Oauth2.0開始讀懂，之後再往前面版本整理較好。這些角色的名稱與規範是到2.0才變得更清楚。<br><img src="./compareTable.png" alt="compare openID,Oauth1.0,2.0"><br>我們可以看到，到Oauth2.0，更把資源擁有者拆開成</p>
+<ul>
+<li><strong>專門負責驗證與授權的</strong> 授權伺服器</li>
+<li><strong>保管受保護資訊的</strong> 資源伺服器</li>
 </ul>
-<p><a href="https://zh.wikipedia.org/wiki/数字身份" target="_blank" rel="noopener">數位身份</a></p>
-<h2 id="OpenID"><a href="#OpenID" class="headerlink" title="OpenID"></a>OpenID</h2><ul>
-<li><p>去中心化</p>
-</li>
-<li><p>身份驗證</p>
-</li>
-<li><p>身份提供者（IdP）</p>
-</li>
-<li><p>終端使用者（End User）</p>
-</li>
-<li><p>標示（Identifier）</p>
-</li>
-<li><p>依賴方（Relying Party, RP）</p>
-</li>
+<p>這就是更嚴格的規範與更複雜的權責設計。在2.0以前，這些都是服務提供者（Service Provider）或是身份提供者 （IdP）一個伺服器就概括的架構。</p>
+<h2 id="小結"><a href="#小結" class="headerlink" title="小結"></a>小結</h2><p>這篇主要整理這三代 <strong>驗證規範</strong> 的各個名稱與角色。可以看到從OpenID到Oauth2.0是變複雜但也 <strong>越來越明確明確</strong> 的角色 + 各角色的權責。將這些角色與流程整理成表比較，才不會把這幾代都搞混。</p>
+<p>至於Oauth1.0/2.0的各個授權流程，就放在別篇再敘述啦！</p>
+<h2 id="References"><a href="#References" class="headerlink" title="References"></a>References</h2><ul>
+<li><a href="https://zh.wikipedia.org/wiki/單一登入" target="_blank" rel="noopener">單一登入Wiki</a></li>
+<li><a href="https://zh.wikipedia.org/wiki/数字身份" target="_blank" rel="noopener">數位身份</a></li>
+<li><a href="https://zh.wikipedia.org/wiki/OpenID" target="_blank" rel="noopener">OpenID</a></li>
+<li><a href="https://zh.wikipedia.org/wiki/开放授权" target="_blank" rel="noopener">Oauth2.0</a></li>
+<li><a href="https://zh.wikipedia.org/wiki/隱蔽重定向漏洞" target="_blank" rel="noopener">OpenID與OAuth實作不夠確實會出現的漏洞</a></li>
 </ul>
-<h2 id="Bearer-token"><a href="#Bearer-token" class="headerlink" title="Bearer token"></a>Bearer token</h2><p><a href="https://alexbilbie.com/guide-to-oauth-2-grants/" target="_blank" rel="noopener">A Guide To OAuth 2.0 Grants - Alex Bilbie</a></p>
 
 
                 
