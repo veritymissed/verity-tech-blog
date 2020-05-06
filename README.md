@@ -32,3 +32,8 @@ hexo clean
 hexo generate
 hexo deploy
 ```
+
+
+### 3. 產生文章自己的資料夾
+`hexo new post_name`
+就會在_post/下產生同名的資料夾，文章內可以直接引用這個資料夾內的圖片。

@@ -1,57 +1,8 @@
 ---
-title: Oauth 筆記，四種常見流程
+title: Oauth 2.0 筆記（2.1），Authorization code grant 授權碼方式
 date: 2020-02-17 14:37:20
 tags: ["Auth", "Oauth", "Web", "Login", "SignIn"]
 ---
-
-- 開放授權
-- 授權給第三方存取自己網站上的私密資料(Protected resources) 可能設定
-- 特定時段
-
-Protected resources
-
-- 相片
-- 影片
-- 聯絡人列表
-
-- 提供權杖
-
-- 源自Twitter的OpenID
-
-- Oauth 2.0
-
-## 數位身份（Digital Identity）
-
-- Public/Private keys 公鑰/私鑰
-- Private key只有本人知道
-- 有一個身份認證的機構，
-- SSH
-
-[數位身份](https://zh.wikipedia.org/wiki/数字身份)
-
-## OpenID
-
-- 去中心化
-- 身份驗證
-
-- 身份提供者（IdP）
-
-- 終端使用者（End User）
-
-- 標示（Identifier）
-
-- 依賴方（Relying Party, RP）
-
-- 快樂武漢
-
-## Bearer token
-
-## Oauth的四種授權流程（Oauth Grant flows）
-
-- Authorization Code Grant
-- Implicit Grant
-- Resource Owner Password Credentials Grant
-- Client Credentials Grant
 
 ### 1\. Authorization Code Grant Type Flow
 
@@ -137,10 +88,6 @@ grant_type=authorization_code
 }
 ```
 
-### 2\. Implicit Grant Type Flow
+## Bearer token
 
-
-
-### 3\. Resource Owner Password Credentials Grant Type Flow
-
-### 4\. Client Credentials Grant Type Flow
+[A Guide To OAuth 2.0 Grants - Alex Bilbie](https://alexbilbie.com/guide-to-oauth-2-grants/)
