@@ -259,7 +259,7 @@
 <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">sudo lsof -i</span><br><span class="line">sudo lsof -i | TCP</span><br><span class="line"><span class="comment"># 掃描localhost的TCP port由哪些process使用</span></span><br><span class="line">sudo lsof | grep listen</span><br><span class="line"><span class="comment"># 掃描localhost的port被哪些process監聽</span></span><br><span class="line">sudo lsof -i :8080</span><br><span class="line"><span class="comment"># 查詢localhost:8080正由哪個process使用</span></span><br></pre></td></tr></table></figure>
 </li>
 <li><p>使用<code>netstat</code></p>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">netstat</span><br></pre></td></tr></table></figure>
 
 
 </li>
