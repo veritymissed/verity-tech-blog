@@ -13,6 +13,17 @@
     
 
     
+        <meta name="description" content="整理一下幾個查詢某個Port狀態的的方式
+
+用nl開啟socket server監聽port1nc -l 127.0.0.1 9000
+
+
+
+
+測試傳輸層PORT狀態有幾種方式，我們可以選用nc或telnet，我們打開新的cmd頁面
+
+使用telnet，Telnet可以測試TCP或UDP層的port"/>
+    
 
     <!--Author-->
     
@@ -21,10 +32,21 @@
 
     <!--Open Graph Title-->
     
-        <meta property="og:title" content=""/>
+        <meta property="og:title" content="查詢某個Port狀態的的方式"/>
     
 
     <!--Open Graph Description-->
+    
+        <meta property="og:description" content="整理一下幾個查詢某個Port狀態的的方式
+
+用nl開啟socket server監聽port1nc -l 127.0.0.1 9000
+
+
+
+
+測試傳輸層PORT狀態有幾種方式，我們可以選用nc或telnet，我們打開新的cmd頁面
+
+使用telnet，Telnet可以測試TCP或UDP層的port"/>
     
 
     <!--Open Graph Site Name-->
@@ -32,7 +54,7 @@
 
     <!--Type page-->
     
-        <meta property="og:type" content="website"/>
+        <meta property="og:type" content="article"/>
     
 
     <!--Page Cover-->
@@ -51,7 +73,7 @@
 
     <!-- Title -->
     
-    <title>DNS - </title>
+    <title>查詢某個Port狀態的的方式 - </title>
 
     <!-- Bootstrap Core CSS -->
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet"/>
@@ -168,62 +190,108 @@
 
 
     <!-- Main Content -->
-    
+    <!-- Page Header -->
+<!-- Set your background image for this header in your post front-matter: cover -->
 
-<!-- Page Header -->
-<!-- Set your background image for this header in the theme's configuration: index_cover -->
 <header class="intro-header" style="background-image: url('https://user-images.githubusercontent.com/6461602/76592396-33316e80-652e-11ea-8a83-fb3209225088.jpeg')">
     <div class="container">
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                <div class="site-heading">
-                    <h1>#DNS</h1>
+                <div class="post-heading">
+                    <h1>查詢某個Port狀態的的方式</h1>
+                    
+                    <span class="meta">
+                        <!-- Date and Author -->
+                        
+                        
+                            2019-07-05
+                        
+                    </span>
                 </div>
             </div>
         </div>
     </div>
 </header>
 
-<!-- Main Content -->
-<div class="container">
-    <div class="row">
-        <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+
+            <!-- Tags and categories -->
+           
+                <div class="col-lg-4 col-lg-offset-2 col-md-5 col-md-offset-1 post-tags">
+                    
+                        
+
+
+<a href="/tags/Web/">#Web</a> <a href="/tags/DevOps/">#DevOps</a> <a href="/tags/DNS/">#DNS</a> <a href="/tags/Network/">#Network</a> <a href="/tags/Linux/">#Linux</a>
+
+
+                    
+                </div>
+                <div class="col-lg-4 col-md-5 post-categories">
+                    
+                </div>
             
-                <div class="post-preview">
-    <a href="/2019/07/05/Check-Port/">
-        <h1 class="post-title archive">
-            查詢某個Port狀態的的方式
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2019-07-05
-    </p>
-</div>
+
+            <!-- Gallery -->
             
-                <div class="post-preview">
-    <a href="/2019/07/03/Check-DNS/">
-        <h1 class="post-title archive">
-            查詢某個domain的DNS設定
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2019-07-03
-    </p>
-</div>
-            
-            <div class="archive-before-pagination"></div>
-            <ul class="pager">
-    
-    
+
+            <!-- Post Main Content -->
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <p>整理一下幾個查詢某個Port狀態的的方式</p>
+<ul>
+<li>用<code>nl</code>開啟socket server監聽port<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nc -l 127.0.0.1 9000</span><br></pre></td></tr></table></figure>
+
+
+</li>
 </ul>
+<p>測試傳輸層PORT狀態有幾種方式，我們可以選用<code>nc</code>或<code>telnet</code>，我們打開新的<code>cmd</code>頁面</p>
+<ul>
+<li><p>使用<code>telnet</code>，Telnet可以測試TCP或UDP層的port狀態</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">telnet 127.0.0.1 9000</span><br><span class="line"><span class="comment">#應會回傳</span></span><br><span class="line">Trying 127.0.0.1...</span><br><span class="line">Connected to localhost.</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>使用 <code>nc</code></p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">nc -v 127.0.0.1 9000</span><br><span class="line"><span class="comment"># 應會回傳</span></span><br><span class="line">Connection to 127.0.0.1 port 9000 [tcp/cslistener] succeeded!</span><br><span class="line"><span class="comment"># 輸入input text，會在socket server那一頁顯示</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>使用 <code>lsof</code>可以查看使用port的process</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">sudo lsof -i</span><br><span class="line">sudo lsof -i | TCP</span><br><span class="line"><span class="comment"># 掃描localhost的TCP port由哪些process使用</span></span><br><span class="line">sudo lsof | grep listen</span><br><span class="line"><span class="comment"># 掃描localhost的port被哪些process監聽</span></span><br><span class="line">sudo lsof -i :8080</span><br><span class="line"><span class="comment"># 查詢localhost:8080正由哪個process使用</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>使用<code>netstat</code></p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+</li>
+</ul>
+<h2 id="主機port的掃描（Port-scanning）"><a href="#主機port的掃描（Port-scanning）" class="headerlink" title="主機port的掃描（Port scanning）"></a>主機port的掃描（Port scanning）</h2><p>這行指令會掃描指定機器 2900 ~ 3000與 5000 ~ 5100 這兩個範圍的 TCP 連接埠，看看哪些埠號有開啟。</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nc -vnz -w 1 172.105.209.163 2900-3000 5000-5100</span><br></pre></td></tr></table></figure>
+<p>這行則是掃描 UDP 的連接埠：</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nc -vnzu 172.105.209.163 1-65535</span><br></pre></td></tr></table></figure>
+
+<h2 id="REFS"><a href="#REFS" class="headerlink" title="REFS"></a>REFS</h2><p><a href="https://blog.gtwang.org/linux/linux-utility-netcat-examples/" target="_blank" rel="noopener">Netcat（Linux nc 指令）網路管理者工具實用範例</a><br><a href="https://www.opencli.com/linux/3-ways-check-remote-server-open-port" target="_blank" rel="noopener">3 種檢查遠端埠號是否開啟的方法</a><br><a href="https://myapollo.com.tw/zh-tw/linux-command-nc/" target="_blank" rel="noopener">Linunx 指令 nc 用法</a></p>
+
+
+                
+            </div>
+
+            <!-- Comments -->
+            
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    
+    <hr />
+    <h3>留言:</h3>
+    <div id="disqus_thread">
+        <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript" target="_blank" rel="noopener">comments powered by Disqus.</a></noscript>
+    </div>
+
+
+
+                </div>
+            
         </div>
     </div>
-</div>
-
+</article>
 
     <!-- Footer -->
     <hr />
@@ -293,7 +361,7 @@
         var dsq = document.createElement('script');
         dsq.type = 'text/javascript';
         dsq.async = true;
-        dsq.src = '//' + disqus_shortname + '.disqus.com/count.js';
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
         (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
     }());
 </script>
