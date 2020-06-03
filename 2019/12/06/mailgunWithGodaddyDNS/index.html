@@ -13,6 +13,10 @@
     
 
     
+        <meta name="description" content="前言最近的專案使用Mailgun寄信服務，完成串接寄信API。
+結果發現Mailgun提供測試用的sandbox domain只能寄信到自己註冊Mailgun的mail，或是特別設定接收者的list。要能正式寄信到普通使用者，還是要透過驗證過的domain才行。
+果然只能乖乖買domain設定ema"/>
+    
 
     <!--Author-->
     
@@ -21,10 +25,14 @@
 
     <!--Open Graph Title-->
     
-        <meta property="og:title" content=""/>
+        <meta property="og:title" content="使用Mailgun設定寄信服務，以及設定Godaddy的DNS相關紀錄"/>
     
 
     <!--Open Graph Description-->
+    
+        <meta property="og:description" content="前言最近的專案使用Mailgun寄信服務，完成串接寄信API。
+結果發現Mailgun提供測試用的sandbox domain只能寄信到自己註冊Mailgun的mail，或是特別設定接收者的list。要能正式寄信到普通使用者，還是要透過驗證過的domain才行。
+果然只能乖乖買domain設定ema"/>
     
 
     <!--Open Graph Site Name-->
@@ -32,7 +40,7 @@
 
     <!--Type page-->
     
-        <meta property="og:type" content="website"/>
+        <meta property="og:type" content="article"/>
     
 
     <!--Page Cover-->
@@ -51,7 +59,7 @@
 
     <!-- Title -->
     
-    <title>彙整：2020/3 - </title>
+    <title>使用Mailgun設定寄信服務，以及設定Godaddy的DNS相關紀錄 - </title>
 
     <!-- Bootstrap Core CSS -->
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet"/>
@@ -168,49 +176,97 @@
 
 
     <!-- Main Content -->
-    
+    <!-- Page Header -->
+<!-- Set your background image for this header in your post front-matter: cover -->
 
-<!-- Page Header -->
-<!-- Set your background image for this header in the theme's configuration: index_cover -->
 <header class="intro-header" style="background-image: url('https://user-images.githubusercontent.com/6461602/76592396-33316e80-652e-11ea-8a83-fb3209225088.jpeg')">
     <div class="container">
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                <div class="site-heading">
-                    <h1>2020/3</h1>
+                <div class="post-heading">
+                    <h1>使用Mailgun設定寄信服務，以及設定Godaddy的DNS相關紀錄</h1>
+                    
+                    <span class="meta">
+                        <!-- Date and Author -->
+                        
+                        
+                            2019-12-06
+                        
+                    </span>
                 </div>
             </div>
         </div>
     </div>
 </header>
 
-<!-- Main Content -->
-<div class="container">
-    <div class="row">
-        <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+
+            <!-- Tags and categories -->
+           
+                <div class="col-lg-4 col-lg-offset-2 col-md-5 col-md-offset-1 post-tags">
+                    
+                        
+
+
+<a href="/tags/Web/">#Web</a> <a href="/tags/DevOps/">#DevOps</a> <a href="/tags/DNS/">#DNS</a> <a href="/tags/Network/">#Network</a>
+
+
+                    
+                </div>
+                <div class="col-lg-4 col-md-5 post-categories">
+                    
+                </div>
             
-                <div class="post-preview">
-    <a href="/2020/03/23/Nginx-config/">
-        <h1 class="post-title archive">
-            Nginx 設定檔筆記
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2020-03-23
-    </p>
-</div>
+
+            <!-- Gallery -->
             
-            <div class="archive-before-pagination"></div>
-            <ul class="pager">
-    
-    
-</ul>
+
+            <!-- Post Main Content -->
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>最近的專案使用Mailgun寄信服務，完成串接寄信API。</p>
+<p>結果發現Mailgun提供測試用的sandbox domain只能寄信到自己註冊Mailgun的mail，或是特別設定接收者的list。要能正式寄信到普通使用者，還是要透過驗證過的domain才行。</p>
+<p>果然只能乖乖買domain設定email相關的DNS設定 Orz…</p>
+<p>那就開始吧！</p>
+<h2 id="Step-1"><a href="#Step-1" class="headerlink" title="Step 1"></a>Step 1</h2><p>進入Mailgun的Domain &gt; Add New Domain，並設定想要的email domain name。Mailgun會建議你使用mg當作你domain前面的prefix，以這個Hostname來設定。</p>
+<p><img src="https://miro.medium.com/max/1400/1*f37HuqiS9a1c09PGiPiB0w.png" alt="Add your domain"></p>
+<h2 id="Step-2"><a href="#Step-2" class="headerlink" title="Step.2"></a>Step.2</h2><p>按下Add Domain後，Mailgun會產生幾個DNS的record需要我們加入Godaddy的DNS設定內。</p>
+<p><img src="https://miro.medium.com/max/1400/1*4zUC8bQFBIT-83LfX_HEiQ.png" alt="Domain management"></p>
+<p>大概是如上圖，TTL設定最短的600秒。</p>
+<p>等了好一陣子（一小時後、兩小時後、一天後……）之後測。</p>
+<p>全部都不行 X___X</p>
+<p>後來研究一下，看了一下我其他的DNS設定，尤其Godaddy原本預設的CNAME設定方式。<br>猜測Godaddy的Hostname格式會自動在後面補上domain name。所以要設定任何prefix只要給定prefix值就好。</p>
+<p>Ex. Godaddy原先預設會有一筆記錄為<br>CNAME: www @ Godaddy會將www自動補上<a href="http://www.domain。" target="_blank" rel="noopener">www.domain。</a></p>
+<p>這樣會將<a href="http://www.domain導向domain指向的IP。" target="_blank" rel="noopener">www.domain導向domain指向的IP。</a></p>
+<p>所以將剛剛關於Mailgun的設定修改一下，把所有我Hostname以及Value裡面的domain都拿掉：</p>
+<p><img src="https://miro.medium.com/max/1400/1*NVNIu7QkqRlYvHRKa2-O9g.png" alt="Domain prefix"></p>
+<p>這一次等十分鐘之後</p>
+<p><img src="https://miro.medium.com/max/1400/1*cusSWBauSaQthCaJ7v1VbQ.png" alt="Domain prefix"></p>
+<p>全部都成功啦！之後就能用這個驗證過的domain寄信了~</p>
+
+
+                
+            </div>
+
+            <!-- Comments -->
+            
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    
+    <hr />
+    <h3>留言:</h3>
+    <div id="disqus_thread">
+        <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript" target="_blank" rel="noopener">comments powered by Disqus.</a></noscript>
+    </div>
+
+
+
+                </div>
+            
         </div>
     </div>
-</div>
-
+</article>
 
     <!-- Footer -->
     <hr />
@@ -280,7 +336,7 @@
         var dsq = document.createElement('script');
         dsq.type = 'text/javascript';
         dsq.async = true;
-        dsq.src = '//' + disqus_shortname + '.disqus.com/count.js';
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
         (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
     }());
 </script>
